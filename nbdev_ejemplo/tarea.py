@@ -20,6 +20,7 @@ class Tarea:
         "Regresa la informacion completa sobre la tarea"
         return f"Tarea: {self.titulo}. \nDescripción: {self.descripcion}. \nFecha de entrega: {self.fecha_entrega}. \nCompletado: {self.completado}"
     __repr__ = __str__ 
-    def tarea_completada(self) -> None:
-        "Cambia el atributo 'completado' a True"
-        self.completado = True
+    def __lt__(self,
+               other: 'Tarea'):
+        "Define la lógica de comparación basada en la fecha de entrega"
+        return self.fecha_entrega < other.fecha_entrega
