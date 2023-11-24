@@ -8,7 +8,7 @@ class Tarea:
     "Crea una tarea con un título, una descripción, un estado (completado o no completado) y una fecha de entrega"
     def __init__(self, 
                  titulo:str, # Título de la tarea
-                 fecha_entrega:date, # Fecha de entrega. Debe ser creada con el método date()
+                 fecha_entrega:str, # Fecha de entrega en formato dd/mm/aaaa. De no estar escrito así, marcará error
                  completado:bool=False, # Indica si ya se entregó o no
                  descripcion:str='' # Información adicional sobre la tarea
                  ) -> None:

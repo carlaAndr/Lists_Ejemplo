@@ -3,7 +3,7 @@ project:
 
 website:
   title: "nbdev_ejemplo"
-  site-url: "https://Palazrak.github.io/nbdev_ejemplo"
+  site-url: "https://Palazrak.github.io/nbdev-ejemplo"
   description: "Ejemplo de workflow en nbdev"
   repo-branch: main
-  repo-url: "https://github.com/Palazrak/nbdev_ejemplo"
+  repo-url: "https://github.com/Palazrak/nbdev-ejemplo"
