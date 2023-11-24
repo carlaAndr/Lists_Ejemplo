@@ -17,14 +17,19 @@ class Administrador:
         "Crea una tarea, la agrega a la lista y la ordena con base en la fecha de entrega"
         tarea = Tarea(titulo, fecha_entrega, completado, descripcion)
         insort(self.lista_tareas, tarea)
-    def imprime(self) -> str:
+    def imprime_completo(self) -> str:
         "Imprime todas las tareas en la lista"
         for tarea in self.lista_tareas:
             print(tarea)
-    __repr__ = imprime
+    def imprime_faltantes(self) -> str:
+        "Regresa las tareas que no han sido completadas"
+        for tarea in self.lista_tareas:
+            if tarea.completada == False:
+                print(tarea)
+    __repr__ = imprime_completo
     def tarea_completada(self, 
                          titulo:str # Título de la tarea que se busca
-                         ) -> bool: # Regresa True si se ejecutó exitosamente
+                         )-> bool: # Regresa True si la tarea estaba en la lista y la marcó como completada
         "Busca una tarea por su nombre y la marca como completado"
         for tarea in self.lista_tareas:
             if tarea.titulo == titulo:
