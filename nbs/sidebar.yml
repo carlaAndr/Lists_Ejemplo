@@ -1,0 +1,8 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_tarea.ipynb
+      - 01_administrador.ipynb
+      - 02_articulo.ipynb
+      - 03_lista_supermercado.ipynb
