@@ -11,20 +11,21 @@ class Administrador:
     def agrega_tarea(self, 
                  titulo:str, # Título de la tarea
                  fecha_entrega:str, # Fecha de entrega en formato dd/mm/aaaa. De no estar escrito así, marcará error
-                 completado:bool=False, # Indica si ya se entregó o no
                  descripcion:str='' # Información adicional sobre la tarea
                  ) -> bool: #Regresa si la tarea se agregó exitosamente o no
         "Crea una tarea, la agrega a la lista y la ordena con base en la fecha de entrega"
-        tarea = Tarea(titulo, fecha_entrega, completado, descripcion)
-        insort(self.lista_tareas, tarea)
+        tarea = Tarea(titulo=titulo, fecha_entrega=fecha_entrega, descripcion=descripcion)
+        self.lista_tareas.append(tarea)
+        self.lista_tareas = sorted(self.lista_tareas, key=lambda x:datetime.strptime(x.fecha_entrega, "%d/%m/%Y"))
     def imprime_completo(self) -> str:
         "Imprime todas las tareas en la lista"
         for tarea in self.lista_tareas:
             print(tarea)
+            
     def imprime_faltantes(self) -> str:
         "Regresa las tareas que no han sido completadas"
         for tarea in self.lista_tareas:
-            if tarea.completada == False:
+            if tarea.completado == False:
                 print(tarea)
     __repr__ = imprime_completo
     def tarea_completada(self, 
